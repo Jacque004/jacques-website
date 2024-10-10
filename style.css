@@ -425,6 +425,23 @@ a {
 .box:hover .content {
     transform: translateX(0);
 }
+#popular-destination {
+    padding: 0 10%;
+    margin-bottom: 5rem;
+}
 
+#popular-destination .content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3.2rem;
+}
+
+#popular-destination .content .box {
+    overflow: hidden;
+    position: relative;
+    height: 250px;
+    transition: box-shadow 0.5s ease;
+    border-radius: 10px;
+}
 
 
