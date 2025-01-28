@@ -6,6 +6,7 @@
 
 body {
   margin: 0;
+  overflow-x: hidden;
 }
 
 .container {
@@ -445,20 +446,27 @@ a {
 }
  /* Conteneur principal .conte dans la section page */
 .page-section .conte {
-    position: relative;
-    display: flex;
-    align-items: flex-start;
-    gap: 16px;  /* Espace entre l'image et le texte */
-    padding: 1rem;
-    background-color: #f4f4f9; /* Couleur de fond claire */
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin-right: 100px; 
-    margin-left: 100px; 
-    margin-bottom: 40px;
+  position: relative;
+  display: flex;
+  flex-direction: row; /* Par défaut sur grand écran */
+  align-items: flex-start;
+  gap: 16px;
+  padding: 1rem;
+  background-color: #f4f4f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 0 auto 40px auto;
+  max-width: 90%;
 }
+
+@media screen and (max-width: 768px) {
+  .page-section .conte {
+    flex-direction: column; /* Passe en colonne */
+    align-items: center; /* Centrer le contenu */
+    text-align: center;
+  }
 
 /* Effet au survol du conteneur */
 .page-section .conte:hover {
@@ -468,8 +476,8 @@ a {
 
 /* Image dans le conteneur */
 .page-section .conte img {
-    width: 100px;
     height: auto;
+    width: 80px; /* Taille adaptée */
     margin-bottom: 1rem;
     opacity: 0.7;
     transition: opacity 0.3s ease, transform 0.3s ease;
