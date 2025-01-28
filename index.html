@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
@@ -42,14 +42,34 @@
             <div class="BFC">
                 <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
                     <li><a href="#apropos" class="nav-link px-2">A propos de moi</a></li>
+                    <li><a href="#formation" class="nav-link px-2">Formation</a></li>
                     <!--<li><a href="#btssio" class="nav-link px-2">BTS SIO</a></li>-->
-                    <li><a href="#projet" class="nav-link px-2">Portfolio</a></li>
-                    <li><a href="#E4" class="nav-link px-2">Stage</a></li>
-                    <li><a href="#E5" class="nav-link px-2">E5</a></li>
+                    <li><a href="#projet" class="nav-link px-2">Projet</a></li>
+                    <li><a href="#stage" class="nav-link px-2">Expériences Pro</a></li>
+                    <!--<li><a href="#E5" class="nav-link px-2">E5</a></li>-->
                     <li><a href="#veille" class="nav-link px-2">Veille</a></li>
                     <li><a href="#contact" class="nav-link px-2">Contact</a></li>
                 </ul>
             </div>
+
+            <script>
+                // Sélectionner tous les liens de navigation
+                const navLinks = document.querySelectorAll('.nav-link');
+
+                // Ajouter un événement au survol
+                navLinks.forEach(link => {
+                    link.addEventListener('mouseover', () => {
+                        link.style.transition = 'transform 0.3s ease, color 0.3s ease';
+                        link.style.transform = 'scale(1.2)';
+                        link.style.color = 'blue'; // Exemple de couleur : rouge tomate
+                    });
+
+                    link.addEventListener('mouseout', () => {
+                        link.style.transform = 'scale(1)';
+                        link.style.color = '';
+                    });
+                });
+            </script>
         </div>
     </nav>
     <br>
@@ -68,7 +88,7 @@
     <br>
     <br>
     <br>
-    
+
     <section class="page-section" id="apropos">
         <div class="container">
             <div class="text-center">
@@ -88,28 +108,30 @@
                             Je suis Jacques Philippe LOEMBA
                         </h2>
                         <div class="article-container">
-                    <div class="article">
-                        <img src="img/portrait.png" alt="Image de l'article">
-                    </div>
+                            <div class="article">
+                                <img src="img/portrait.png" alt="Image de l'article">
+                            </div>
                         </div>
                         <p class="card-text">
-                            Étudiant en Bachelor Concepteur Développeur d'Applications (CDA), 
-                            je suis passionné par les nouvelles technologies et motivé par les défis techniques. 
+                            Étudiant en Bachelor Concepteur Développeur d'Applications (CDA),
+                            je suis passionné par les nouvelles technologies et motivé par les défis techniques.
                             Avec des compétences solides en Java, HTML, CSS, JavaScript, PHP et MySQL,
                             je maîtrise la création d’applications performantes et d’interfaces responsives.
-                            Mes expériences incluent l’utilisation d’outils collaboratifs comme GitHub, Trello, et des logiciels de conception tels que Figma et Canva.
-                            Curieux et rigoureux, je suis déterminé à contribuer à des projets innovants tout en perfectionnant mes compétences.
+                            Mes expériences incluent l’utilisation d’outils collaboratifs comme GitHub, Trello, et des
+                            logiciels de conception tels que Figma et Canva.
+                            Curieux et rigoureux, je suis déterminé à contribuer à des projets innovants tout en
+                            perfectionnant mes compétences.
                         </p>
                         <a href="docs/CV-alt.pdf" class="read-more" target="_blank">Voir mon cv</a>
                     </div>
                 </div>
 
-                
+
             </div>
         </div>
         </div>
 
-       
+
         </div>
 
     </section>
@@ -171,6 +193,83 @@
         </div>
     </section>
     -->
+    <!--PARTIE FORMATION-->
+    <section class="page-section" id="formation">
+        <div class="max-w-4x1 mx-auto px-4">
+            <div class="text-center mb-8 md:mb-16">
+                <h2>formation</h2>
+                <div class="w-32 h-2 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto rounded-full"></div>
+            </div>
+            <div class="space-y-8">
+                <div class="conte flex-1">
+                    <img src="https://www.esic-online.com/_next/image?url=%2Fimages%2Flogo.png&w=256&q=75" alt="ESIC"
+                        class="absolute inset-0 w-full h-full object-contain p-2">
+                    <div class="text-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-calendar w-5 h-5">
+                            <path d="M8 2v4"></path>
+                            <path d="M16 2v4"></path>
+                            <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+                            <path d="M3 10h18"></path>
+                        </svg>
+                        <span class="font-medium">De 2024 à 2025</span>
+                        <div>
+                            <br>
+                            <p class="font-semibold">ESIC</p>
+                            <h3>Bachelor Développeur Concepteur d'Application</h3>
+                            <p class="text-sm text-gray-600">Paris 15 ème arrondissement, France</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="space-y-8">
+                <div class="conte">
+                    <img src="https://www.institut-f2i.fr/wp-content/themes/f2i-theme/img/logo-F2I.svg" alt="IEF2I"
+                        class="absolute inset-0 w-full h-full object-contain p-2">
+                    <div class="text-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-calendar w-5 h-5">
+                            <path d="M8 2v4"></path>
+                            <path d="M16 2v4"></path>
+                            <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+                            <path d="M3 10h18"></path>
+                        </svg>
+                        <span class="font-medium">De 2022 à 2024</span>
+                        <div>
+                            <p class="font-semibold">IEF2I</p>
+                            <h3>2eme année BTS SIO - SLAM</h3>
+                            <p class="text-sm text-gray-600">Vincenne, France</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="space-y-8">
+                <div class="conte">
+                    <img src="docs/imgbac.jpeg" alt="Complexe scolaire Bizi"
+                        class="absolute inset-0 w-full h-full object-contain p-2">
+                    <div class="text-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-calendar w-5 h-5">
+                            <path d="M8 2v4"></path>
+                            <path d="M16 2v4"></path>
+                            <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+                            <path d="M3 10h18"></path>
+                        </svg>
+                        <span class="font-medium">2021</span>
+                        <div>
+                            <p class="font-semibold"> Complexe scolaire Bizi</p>
+                            <h3>BAC Général</h3>
+                            <p class="text-sm text-gray-600">Congo/Brazzaville</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
 
     <!--PROJET Portfolio-->
 
@@ -178,28 +277,14 @@
         <div class="container">
             <div class="text-center">
                 <div class="text-center" style="text-align: center !important;">
-                    <h2>Portfolio</h2>
-                     <br>
-                    <p>Mon portfolio professionnel contient une sélection de mes réalisations les plus pertinentes dans
-                        divers domaines tels
-                        que la conception d'application et la gestion de projet, ainsi que des informations sur mes
-                        compétences et expériences.
-                        Chaque réalisation est accompagnée d'une description détaillée de mes objectifs, des actions que
-                        j'ai entreprises et des
-                        résultats obtenus. Mon site web, où vous pouvez explorer mon portfolio, est clair, bien
-                        structuré et facile à naviguer.
-                        Je suis convaincu que mes compétences en gestion de projet, en communication, en créativité et
-                        en résolution de
-                        problèmes me permettent d'offrir des solutions innovantes et efficaces pour répondre aux besoins
-                        de mes clients.
-                    </p>
-
                     <h2>Projets</h2>
-                     <br>
+                    <br>
                     <p>
-                         J'ai eu l'opportunité de travailler sur divers projets qui m'ont permis de développer et d'affiner mes compétences en informatique. Voici quelques-uns des projets les plus significatifs auxquels j'ai contribué 
+                        J'ai eu l'opportunité de travailler sur divers projets qui m'ont permis de développer et
+                        d'affiner mes compétences en informatique. Voici quelques-uns des projets les plus significatifs
+                        auxquels j'ai contribué
 
-                        
+
                     </p>
                 </div>
                 <div class="row">
@@ -218,7 +303,8 @@
                                                 <img src="img/Calculatrice.png" alt="Image de l'article">
                                                 <div class="article-content">
                                                     <h2>Calculatrice</h2>
-                                                    <a href="calculatrice.html" class="read-more" target="_blank">Ici</a>
+                                                    <a href="calculatrice.html" class="read-more"
+                                                        target="_blank">Ici</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -290,7 +376,8 @@
                                     <p>Site vitrine compagnie aérienne</p>
                                     <a href="docs/Maquette.pdf" class="read-more" target="_blank">Maquette</a>
                                     <a href="docs/Rapport-projet.pdf" class="read-more" target="_blank">Rapport</a>
-                                    <a href="https://jacque004.github.io/ljpTravel/" class="read-more" target="_blank">voir plus</a>
+                                    <a href="https://jacque004.github.io/ljpTravel/" class="read-more"
+                                        target="_blank">voir plus</a>
                                 </div>
                             </div>
                         </div>
@@ -300,54 +387,71 @@
         </div>
     </section>
     <!--PARTIE Stages-->
-    <section class="page-section" id="E4">
-        <div class="container">
-            <div class="section-title">
-                <div class="text-center" style="text-align: center !important;">
-                    <h2>Stage</h2>
-                    <h4>Stage 2ème année</h4><br>
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 d-flex align-items-center">
-                        <embed src="docs/Stage2(1).pdf"
-                            type="application/pdf" width="100%" height="500px">
-                    </div>
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 text-center">
-                        <p id="bt_tableau"><a
-                                href="docs/Stage2(1).pdf"
-                                class="read-more">Rapport de stage 2ème année</a>
+    <section class="page-section" id="stage">
+        <div class="max-w-4x1 mx-auto px-4">
+            <div class="text-center mb-8 md:mb-16">
+                <h2>Expériences Professionnelles</h2>
+                <br>
+                <br>
+                <div class="w-32 h-2 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto rounded-full"></div>
+            </div>
+            <div class="space-y-8">
+                <div class="conte">
+                    <img src="docs/imgbac.jpeg" alt="Stage 2ème année"
+                        class="absolute inset-0 w-full h-full object-contain p-2">
+                    <div class="text-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-calendar w-5 h-5">
+                            <path d="M8 2v4"></path>
+                            <path d="M16 2v4"></path>
+                            <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+                            <path d="M3 10h18"></path>
+                        </svg>
+                        <span class="font-medium">De janvier 2023 - mars 2024</span>
+                        <div>
+                            <p class="font-semibold">Maxiconduite</p>
+                            <h4>Stage 2ème année</h4>
+                            <p class="text-sm text-gray-600">Cergy, France</p>
+                            <a href="docs/Stage2(1).pdf" class="read-more" target="_blank">Rapport de stage 2ème
+                                année</a>
+                        </div>
                     </div>
                 </div>
                 <br>
-            </div>
-        </div>
-        
-         <div class="container">
-            <div class="text-center">
-                <h4>Stage 1ère année</h4><br>
-                <div class="text-center">
-                    <div class="text-center" style="text-align: center !important;">
-                        <p>
-                            Projet : Plateforme Web de Création d'un client pour l'Entreprise Loking
-                            consulting / Villeneuve-le-Roi
-                        </p> <br>
-                        <small>
-                            Durée du Projet : 09/05/2022 - 03/06/2022 (4semaines)
-                        </small>
-                    </div>
-                </div>
-                <a href="rapport_stage.pdf" target="_blank">Rapport de stage 1ère année</a>
-                <div class="article-container">
-                    <div class="article">
-                        <img src="img/stage.png" alt="Image de l'article">
-                        <div class="article-content">
-                            <h2>Plateforme Web de Création</h2>
-                            <a href="présentation_stage.pdf" class="read-more" target="_blank">Ici</a>
+                <div class="space-y-8">
+                    <div class="conte">
+                        <img src="docs/imgbac.jpeg" alt="Stage 1ère année"
+                            class="absolute inset-0 w-full h-full object-contain p-2">
+                        <div class="text-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-calendar w-5 h-5">
+                                <path d="M8 2v4"></path>
+                                <path d="M16 2v4"></path>
+                                <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+                                <path d="M3 10h18"></path>
+                            </svg>
+                            <span class="font-medium">De 09 mai 2022 - 03 juin 2022</span>
+                            <div>
+                                <p class="font-semibold">Loking consulting</p>
+                                <h4>Stage 2ème année</h4>
+                                <p class="text-sm text-gray-600">Villeneuve-le-Roi, France</p>
+                                <p>
+                                    Projet : Plateforme Web de Création d'un client pour l'Entreprise.
+                                </p>
+                                <a href="docs/rapport_stage.pdf" class="read-more" target="_blank">Rapport de stage 2ème
+                                    année</a>
+                                <a href="présentation_stage.pdf" class="read-more" target="_blank">Voir</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-         </div>
+        </div>
     </section>
-    <!--PARTIE E5-->
+
+    <!--PARTIE E5-
     <section class="page-section" id="E5">
         <div class="container">
             <div class="section-title">
@@ -362,11 +466,13 @@
                             documentation</a>
 
                     </p>
-                    <a href="https://drive.google.com/drive/folders/143A2BJiaZTtbWjMvJLSP66LvkKz7DQlz?usp=sharing" download="Site e-commerce">Télécharger le projet</a>
+                    <a href="https://drive.google.com/drive/folders/143A2BJiaZTtbWjMvJLSP66LvkKz7DQlz?usp=sharing"
+                        download="Site e-commerce">Télécharger le projet</a>
                 </div>
             </div>
         </div>
     </section>
+-->
     <!--PARTIE VEILLE-->
 
     <section class="page-section" id="veille">
@@ -382,28 +488,34 @@
                         <div class="article-content">
                             <h2>IA médical</h2>
                             <p>
-                                l'IA transforme profondément le secteur médical en améliorant les diagnostics, la prise de décision clinique, la recherche et la gestion des systèmes de santé. Cependant, son utilisation doit être encadrée par des principes éthiques pour maximiser ses bénéfices tout en minimisant ses risques​</p>
+                                l'IA transforme profondément le secteur médical en améliorant les diagnostics, la prise
+                                de décision clinique, la recherche et la gestion des systèmes de santé. Cependant, son
+                                utilisation doit être encadrée par des principes éthiques pour maximiser ses bénéfices
+                                tout en minimisant ses risques​</p>
                             <P>
-                                <a href="https://www.msdconnect.fr/innovation-sante/e-sante/lintelligence-artificielle-dans-le-milieu-medical-un-atout-pour-les-patients-et-les-praticiens/" target="_blank">MSD Connect
+                                <a href="https://www.msdconnect.fr/innovation-sante/e-sante/lintelligence-artificielle-dans-le-milieu-medical-un-atout-pour-les-patients-et-les-praticiens/"
+                                    target="_blank">MSD Connect
                             </P>
                             <P>
-                               <a href="https://www.entreprises.gouv.fr/fr/numerique/enjeux/l-intelligence-artificielle-au-service-de-la-sante" target="_blank">entreprises.gouv.fr
-                            </P> 
+                                <a href="https://www.entreprises.gouv.fr/fr/numerique/enjeux/l-intelligence-artificielle-au-service-de-la-sante"
+                                    target="_blank">entreprises.gouv.fr
+                            </P>
                             <p>
-                              <a href="https://www.who.int/fr/news/item/28-06-2021-who-issues-first-global-report-on-ai-in-health-and-six-guiding-principles-for-its-design-and-use" target="_blank">World Health Organization WHO  
+                                <a href="https://www.who.int/fr/news/item/28-06-2021-who-issues-first-global-report-on-ai-in-health-and-six-guiding-principles-for-its-design-and-use"
+                                    target="_blank">World Health Organization WHO
                             </p>
                             <p>
-                                 <a href="https://www.google.fr/alerts#2:0/" target="_blank">Google Alert</a>
+                                <a href="https://www.google.fr/alerts#2:0/" target="_blank">Google Alert</a>
                             </p>
                             <a href="https://www.futura-sciences.com/sante/actualites/medecine-ia-medicale-machine-selective-meilleur-pire-104702/"
                                 class="read-more" target="_blank">Actualités sur l'IA</a>
-                           
+
                         </div>
                     </div>
                 </div>
-                  
-        </div>
+
             </div>
+        </div>
     </section>
 
     <!--PARTIE CONTACT-->
@@ -414,14 +526,17 @@
                 <h2 class="masthead-subheading">Contact</h2>
                 <div class="footer_group_contact">
                     <ul>
-                        <p><i class="fa-sharp fa-solid fa-envelope"></i> <a
-                                href="mailto:jacquesloemba@outlook.fr" target="_blank">jacquesloemba@outlook.fr</a></p>
+                        <p><i class="fa-sharp fa-solid fa-envelope"></i> <a href="mailto:jacquesloemba@outlook.fr"
+                                target="_blank">jacquesloemba@outlook.fr</a></p>
                         <p><i class="fab fa-linkedin"></i> <a
-                                href="https://www.linkedin.com/in/jacques-philippe-loemba-04baaa256/" target="_blank">linkedin</a>
+                                href="https://www.linkedin.com/in/jacques-philippe-loemba-04baaa256/"
+                                target="_blank">linkedin</a>
                         </p>
-                        <p><i class="fa-brands fa-github"><a href="http://github.com/Jacque004" target="_blank">github</a></i></p>
-                        <p><i class="fa-brands fa-twitter"></i><a href="https://twitter.com/jacques_p69" target="_blank">twitter</a></p>
-                        
+                        <p><i class="fa-brands fa-github"><a href="http://github.com/Jacque004"
+                                    target="_blank">github</a></i></p>
+                        <p><i class="fa-brands fa-twitter"></i><a href="https://twitter.com/jacques_p69"
+                                target="_blank">twitter</a></p>
+
                     </ul>
                 </div>
             </div>
