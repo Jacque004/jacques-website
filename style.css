@@ -521,5 +521,45 @@ a {
 .leading-relaxed {
     line-height: 1.625; /* Espacement entre les lignes */
 }
+ .skills-container {
+            text-align: center;
+            padding: 40px;
+        }
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .skill {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100px;
+        }
+        .skill img {
+            width: 60px;
+            height: 60px;
+        }}
 
+        .skills-container {
+            text-align: center;
+            padding: 40px;
+        }
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .skill {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100px;
+        }
+        .skill img {
+            width: 60px;
+            height: 60px;
+        }
 
