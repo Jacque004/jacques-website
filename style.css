@@ -131,34 +131,75 @@ body {
 
 /* Compétences */
 .skills-container {
-    padding: 4rem 0;
+    padding: 1rem 0;
+}
+
+.skill-category {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 1.2rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.skill-category:hover {
+    transform: translateY(-3px);
+}
+
+.skill-category h3 {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.3rem;
+    border-bottom: 1px solid var(--primary-color);
+    text-align: center;
 }
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 2rem;
-    padding: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 0.8rem;
+    justify-items: center;
 }
 
 .skill {
-    background: white;
-    padding: 1.5rem;
-    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: var(--transition);
+    padding: 0.6rem;
+    background: var(--light-bg);
+    border-radius: 8px;
+    width: 100%;
+    max-width: 80px;
+    transition: all 0.3s ease;
 }
 
 .skill:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    background: white;
 }
 
-.skill img, .skill i {
-    width: 64px;
-    height: 64px;
-    margin-bottom: 1rem;
+.skill img {
+    width: 25px;
+    height: 25px;
+    margin-bottom: 0.3rem;
+    object-fit: contain;
+}
+
+.skill i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 0.3rem;
+}
+
+.skill p {
+    margin: 0;
+    font-size: 0.75rem;
+    color: var(--text-color);
+    font-weight: 500;
 }
 
 /* Contact */
@@ -206,12 +247,41 @@ body {
     }
 
     .skills-grid {
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+        gap: 0.6rem;
+    }
+
+    .skill {
+        max-width: 70px;
+        padding: 0.5rem;
+    }
+
+    .skill img {
+        width: 22px;
+        height: 22px;
+    }
+
+    .skill p {
+        font-size: 0.7rem;
     }
 
     .footer_group_contact {
         flex-direction: column;
         align-items: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .skill-category {
+        padding: 1rem;
+    }
+
+    .skill-category h3 {
+        font-size: 1.1rem;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
