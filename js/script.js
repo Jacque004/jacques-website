@@ -128,4 +128,136 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     });
+});
+
+// Gestion de la navbar au scroll
+const navbar = document.querySelector('.navbar');
+let lastScroll = 0;
+
+window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+    
+    // Ajout de la classe scrolled pour le style de la navbar
+    if (currentScroll > 50) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+    
+    lastScroll = currentScroll;
+});
+
+// Animation des éléments au scroll
+const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            if (entry.target.classList.contains('skill-category')) {
+                entry.target.style.transitionDelay = `${entry.target.dataset.delay || 0}s`;
+            }
+        }
+    });
+}, observerOptions);
+
+// Observer les éléments à animer
+document.querySelectorAll('.skill-category, .timeline-item, .portfolio-item, .fade-in').forEach((element, index) => {
+    element.dataset.delay = index * 0.1;
+    observer.observe(element);
+});
+
+// Gestion du menu mobile
+const navbarToggler = document.querySelector('.navbar-toggler');
+const navbarCollapse = document.querySelector('.navbar-collapse');
+
+navbarToggler.addEventListener('click', () => {
+    navbarCollapse.classList.toggle('show');
+});
+
+// Fermer le menu mobile lors du clic sur un lien
+document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+        if (navbarCollapse.classList.contains('show')) {
+            navbarCollapse.classList.remove('show');
+        }
+    });
+});
+
+// Filtrage des projets
+const filterButtons = document.querySelectorAll('.filter-btn');
+const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        // Retirer la classe active de tous les boutons
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        // Ajouter la classe active au bouton cliqué
+        button.classList.add('active');
+
+        const filterValue = button.getAttribute('data-filter');
+
+        portfolioItems.forEach(item => {
+            if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                item.style.display = 'block';
+                setTimeout(() => {
+                    item.classList.add('visible');
+                }, 100);
+            } else {
+                item.classList.remove('visible');
+                setTimeout(() => {
+                    item.style.display = 'none';
+                }, 300);
+            }
+        });
+    });
+});
+
+// Smooth scroll pour les liens d'ancrage
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
+// Gestion du mode sombre
+const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+const body = document.body;
+
+// Fonction pour mettre à jour le thème
+function updateTheme(e) {
+    if (e.matches) {
+        body.classList.add('dark-theme');
+    } else {
+        body.classList.remove('dark-theme');
+    }
+}
+
+// Écouter les changements de préférence de thème
+prefersDarkScheme.addListener(updateTheme);
+// Appliquer le thème initial
+updateTheme(prefersDarkScheme);
+
+// Optimisation des performances
+let resizeTimer;
+window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+        // Recalculer les positions des éléments si nécessaire
+        observer.disconnect();
+        document.querySelectorAll('.skill-category, .timeline-item, .portfolio-item, .fade-in').forEach(element => {
+            observer.observe(element);
+        });
+    }, 250);
 }); 
