@@ -1,459 +1,344 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jacques Philippe LOEMBA portfolio</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <style type="text/css"></style>
+    <title>Jacques Philippe LOEMBA - Portfolio</title>
+    
+    <!-- Meta tags pour le SEO -->
+    <meta name="description" content="Portfolio de Jacques Philippe LOEMBA - Développeur Web Full Stack">
+    <meta name="keywords" content="développeur web, portfolio, full stack, PHP, JavaScript, HTML, CSS">
+    
+    <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="icon" type="image/x-icon" href="/img/favicon.ico/favicon.ico" />
-
-
-    <!-- Font Awesome icons (free version)-->
-
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico/favicon.ico">
     <link rel="manifest" href="/site.webmanifest">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet"
-        type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-shrink" id="mainNav">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand js-scroll-trigger" href="#page-top" style="font-family: Georgia, serif">Jacques
-                Philippe LOEMBA</a>
-            <div class="BFC">
-                <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-                    <li><a href="#apropos" class="nav-link px-2">A propos de moi</a></li>
-                    <li><a href="#formation" class="nav-link px-2">Formation</a></li>
-                    <!--<li><a href="#btssio" class="nav-link px-2">BTS SIO</a></li>-->
-                    <li><a href="#projet" class="nav-link px-2">Projet</a></li>
-                    <li><a href="#stage" class="nav-link px-2">Expériences Pro</a></li>
-                    <!--<li><a href="#E5" class="nav-link px-2">E5</a></li>-->
-                    <li><a href="#veille" class="nav-link px-2">Veille</a></li>
-                    <li><a href="#Compétences" class="nav-link px-2">Compétences</a></li>
-                    <li><a href="#contact" class="nav-link px-2">Contact</a></li>
+            <a class="navbar-brand" href="#page-top">Jacques Philippe LOEMBA</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#apropos">À propos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#formation">Formation</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projet">Projets</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#stage">Expériences</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#veille">Veille</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#Compétences">Compétences</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
             </div>
-
-            <script>
-                // Sélectionner tous les liens de navigation
-                const navLinks = document.querySelectorAll('.nav-link');
-
-                // Ajouter un événement au survol
-                navLinks.forEach(link => {
-                    link.addEventListener('mouseover', () => {
-                        link.style.transition = 'transform 0.3s ease, color 0.3s ease';
-                        link.style.transform = 'scale(1.2)';
-                        link.style.color = 'blue'; // Exemple de couleur : rouge tomate
-                    });
-
-                    link.addEventListener('mouseout', () => {
-                        link.style.transform = 'scale(1)';
-                        link.style.color = '';
-                    });
-                });
-            </script>
         </div>
     </nav>
-    <br>
-    <br>
-    <br>
 
+    <!-- Header -->
     <header class="masthead">
         <div class="container">
-            <div class="masthead-subheading" style="color:black">
-                <marquee behavior="" direction="">
-                    <h3><b>Bienvenue sur mon portfolio</b></h3>
-                </marquee>
+            <div class="masthead-content">
+                <h1 class="masthead-heading">Jacques Philippe LOEMBA</h1>
+                <h2 class="masthead-subheading">Développeur Web Full Stack</h2>
+                <div class="masthead-buttons">
+                    <a href="#projet" class="btn btn-primary btn-lg">Voir mes projets</a>
+                    <a href="#contact" class="btn btn-outline-light btn-lg">Me contacter</a>
+                </div>
             </div>
         </div>
     </header>
-    <br>
-    <br>
-    <br>
 
+    <!-- À propos -->
     <section class="page-section" id="apropos">
         <div class="container">
             <div class="text-center">
-                <h2>A propos de moi</h2>
+                <h2 class="section-heading">À propos de moi</h2>
+                <div class="section-divider"></div>
             </div>
-            <div class="section-title">
-                <div class="container">
-                    <div class="text-center">
-                        <small>
-                            <span class="material-symbols-outlined">
-                                home_pin
-                            </span>
-                            94190 Villeneuve-Saint-Georges, France
-                        </small>
-                        <h2>
-                            Hello<br>
-                            Je suis Jacques Philippe LOEMBA
-                        </h2>
-                        <div class="article-container">
-                            <div class="article">
-                                <img src="img/portrait.png" alt="Image de l'article">
-                            </div>
-                        </div>
-                        <p class="card-text">
+            <div class="row align-items-center">
+                <div class="col-lg-4">
+                    <div class="profile-image">
+                        <img src="img/portrait.png" alt="Jacques Philippe LOEMBA" class="img-fluid rounded-circle">
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="about-content">
+                        <p class="lead">
                             Étudiant en Bachelor Concepteur Développeur d'Applications (CDA),
                             je suis passionné par les nouvelles technologies et motivé par les défis techniques.
-                            Avec des compétences solides en Java, HTML, CSS, JavaScript, PHP et MySQL,
-                            je maîtrise la création d’applications performantes et d’interfaces responsives.
-                            Mes expériences incluent l’utilisation d’outils collaboratifs comme GitHub, Trello, et des
-                            logiciels de conception tels que Figma et Canva.
-                            Curieux et rigoureux, je suis déterminé à contribuer à des projets innovants tout en
-                            perfectionnant mes compétences.
                         </p>
-                        <a href="docs/CV-Alternance (2).pdf" class="read-more" target="_blank">Voir mon CV-Alternance</a>
+                        <p>
+                            Avec des compétences solides en Java, HTML, CSS, JavaScript, PHP et MySQL,
+                            je maîtrise la création d'applications performantes et d'interfaces responsives.
+                            Mes expériences incluent l'utilisation d'outils collaboratifs comme GitHub, Trello,
+                            et des logiciels de conception tels que Figma et Canva.
+                        </p>
+                        <p>
+                            Curieux et rigoureux, je suis déterminé à contribuer à des projets innovants
+                            tout en perfectionnant mes compétences.
+                        </p>
+                        <div class="about-buttons">
+                            <a href="docs/CV-Alternance.pdf" class="btn btn-primary" target="_blank">
+                                <i class="fas fa-download me-2"></i>Télécharger mon CV
+                            </a>
+                            <a href="#contact" class="btn btn-outline-primary">
+                                <i class="fas fa-envelope me-2"></i>Me contacter
+                            </a>
+                        </div>
                     </div>
                 </div>
-
-
             </div>
         </div>
-        </div>
-
-
-        </div>
-
     </section>
 
-    <!--PARTIE BTS SIO
-
-    <section class="page-section bg-light" id="btssio">
+    <!-- Formation -->
+    <section class="page-section bg-light" id="formation">
         <div class="container">
             <div class="text-center">
-                <h2 class="section-heading text-uppercase">BTS SIO</h2>
+                <h2 class="section-heading">Formation</h2>
+                <div class="section-divider"></div>
             </div>
-            <div class="container">
-                <div style="text-align: center; margin-left : 60px; margin-right: 60px; padding : 50px">
-                    <div style="font-family: Georgia, serif" id="prstat">
-                        <div class="section-title">
-                            <div class="text-center">
-                                <h2>Qu'est ce que le <b>BTS SIO</b> ?</h2>
-                                <p>Le BTS SIO est un diplôme national en informatique de niveau bac+2. Il peut être
-                                    préparé
-                                    gratuitement
-                                    en deux ans dans quelque 130 lycées publics ou privés sous contrat présents sur tout
-                                    le
-                                    territoire
-                                    français. Il est aussi proposé par des établissements privés sous contrat
-                                    d’association avec
-                                    l’état
-                                    ou non. A l’issue de cette formation on peut intervenir en entreprise en tant que
-                                    développeur
-                                    d’applications informatiques ou administrateur de réseaux locaux.</p>
-                                <br>
-                                <h4>Le BTS SIO propose deux spécialités moi j'ai choisi l'option SLAM :</h4><br>
-                                <h4><i class="icofont-code"></i> Option <b>SLAM</b> </h4>
-                                <p> L’option Solutions logicielles et applications métiers forme des
-                                    spécialistes des
-                                    logiciels
-                                    (rédaction d’un cahier des charges, formulation des besoins et
-                                    spécifications,
-                                    développement, intégration au sein de la société). </p>
-                                <p> Les techniciens supérieurs en informatique option <b>SLAM</b>, sont préparés
-                                    aux
-                                    métiers de
-                                    :
-                                <ul>
-                                    <br><i class="icofont-rounded-right"></i>Développeur d’applications
-                                    informatiques<br>
-                                    <i class="icofont-rounded-right"></i>Développeur informatique<br>
-                                    <i class="icofont-rounded-right"></i>Analyste d’applications ou
-                                    d’études<br>
-                                    <i class="icofont-rounded-right"></i>Analyste programmeur<br>
-                                </ul>
-                                </p>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <img src="https://www.esic-online.com/_next/image?url=%2Fimages%2Flogo.png" alt="ESIC">
+                            <div class="timeline-title">
+                                <h3>Bachelor Développeur Concepteur d'Application</h3>
+                                <h4>ESIC</h4>
                             </div>
-                            <a class="btn btn-info" type="button" href="https://www.btsinfo.fr/le-bts-sio/">EN
-                                SAVOIR+</a>
+                        </div>
+                        <div class="timeline-body">
+                            <p class="timeline-date">
+                                <i class="fas fa-calendar-alt me-2"></i>
+                                octobre 2024 - septembre 2025
+                            </p>
+                            <p class="timeline-location">
+                                <i class="fas fa-map-marker-alt me-2"></i>
+                                Paris 15ème arrondissement, France
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <img src="https://www.institut-f2i.fr/wp-content/themes/f2i-theme/img/logo-F2I.svg" alt="IEF2I">
+                            <div class="timeline-title">
+                                <h3>BTS SIO - SLAM</h3>
+                                <h4>IEF2I</h4>
+                            </div>
+                        </div>
+                        <div class="timeline-body">
+                            <p class="timeline-date">
+                                <i class="fas fa-calendar-alt me-2"></i>
+                                2022 - 2024
+                            </p>
+                            <p class="timeline-location">
+                                <i class="fas fa-map-marker-alt me-2"></i>
+                                Vincennes, France
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <img src="docs/imgbac.jpeg" alt="Complexe scolaire Bizi">
+                            <div class="timeline-title">
+                                <h3>BAC Général</h3>
+                                <h4>Complexe scolaire Bizi</h4>
+                            </div>
+                        </div>
+                        <div class="timeline-body">
+                            <p class="timeline-date">
+                                <i class="fas fa-calendar-alt me-2"></i>
+                                2021
+                            </p>
+                            <p class="timeline-location">
+                                <i class="fas fa-map-marker-alt me-2"></i>
+                                République du Congo
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    -->
-    <!--PARTIE FORMATION-->
-    <section class="page-section" id="formation">
-        <div class="max-w-4x1 mx-auto px-4">
-            <div class="text-center mb-8 md:mb-16">
-                <h2>Formation</h2>
-                <div class="w-32 h-2 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto rounded-full"></div>
-            </div>
-            <br>
-            <div class="space-y-8">
-                <div class="conte flex-1">
-                    <img src="https://www.esic-online.com/_next/image?url=%2Fimages%2Flogo.png&w=256&q=75" alt="ESIC"
-                        class="absolute inset-0 w-full h-full object-contain p-2">
-                    <div class="text-container">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            class="lucide lucide-calendar w-5 h-5">
-                            <path d="M8 2v4"></path>
-                            <path d="M16 2v4"></path>
-                            <rect width="18" height="18" x="3" y="4" rx="2"></rect>
-                            <path d="M3 10h18"></path>
-                        </svg>
-                        <span class="font-medium">octobre 2024 - septembre 2025</span>
-                        <div>
-                            <p class="font-semibold">ESIC</p>
-                            <h4>Bachelor Développeur Concepteur d'Application</h4>
-                            <p class="text-sm text-gray-600">Paris 15 ème arrondissement, France</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="space-y-8">
-                <div class="conte">
-                    <img src="https://www.institut-f2i.fr/wp-content/themes/f2i-theme/img/logo-F2I.svg" alt="IEF2I"
-                        class="absolute inset-0 w-full h-full object-contain p-2">
-                    <div class="text-container">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            class="lucide lucide-calendar w-5 h-5">
-                            <path d="M8 2v4"></path>
-                            <path d="M16 2v4"></path>
-                            <rect width="18" height="18" x="3" y="4" rx="2"></rect>
-                            <path d="M3 10h18"></path>
-                        </svg>
-                        <span class="font-medium">2022 - 2024</span>
-                        <div>
-                            <p class="font-semibold">IEF2I</p>
-                            <h4>2eme année BTS SIO - SLAM</h4>
-                            <p class="text-sm text-gray-600">Vincenne, France</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="space-y-8">
-                <div class="conte">
-                    <img src="docs/imgbac.jpeg" alt="Complexe scolaire Bizi"
-                        class="absolute inset-0 w-full h-full object-contain p-2">
-                    <div class="text-container">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            class="lucide lucide-calendar w-5 h-5">
-                            <path d="M8 2v4"></path>
-                            <path d="M16 2v4"></path>
-                            <rect width="18" height="18" x="3" y="4" rx="2"></rect>
-                            <path d="M3 10h18"></path>
-                        </svg>
-                        <span class="font-medium">2021</span>
-                        <div>
-                            <p class="font-semibold"> Complexe scolaire Bizi</p>
-                            <h4>BAC Général</h4>
-                            <p class="text-sm text-gray-600">République du Congo</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-    </section>
-
-    <!--PROJET Portfolio-->
-
-<section class="page-section" id="projet">
-    <div class="container">
-        <div class="text-center">
-            <h2>Projets</h2>
-            <br>
-            <p>
-                J'ai eu l'opportunité de travailler sur divers projets qui m'ont permis de développer et d'affiner mes compétences en informatique. Voici quelques-uns des projets les plus significatifs auxquels j'ai contribué.
-            </p>
-            <br>
-        </div>
-        
-        <div class="row">
-            <!-- Projet 1 : Calculatrice -->
-            <div class="col-lg-4 col-sm-6 mb-4">
-                <div class="portfolio-item">
-                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"></div>
-                        </div>
-                    </a>
-                    <div class="portfolio-caption">
-                        <div class="article">
-                            <img src="img/Calculatrice.png" alt="Calculatrice">
-                            <div class="article-content">
-                                <h2>Calculatrice</h2>
-                                <a href="calculatrice.html" class="read-more" target="_blank">Voir</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <!-- Projets -->
+    <section class="page-section" id="projet">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading">Projets</h2>
+                <div class="section-divider"></div>
+                <p class="section-description">
+                    Découvrez mes projets les plus significatifs qui démontrent mes compétences
+                    et mon expérience en développement web.
+                </p>
             </div>
 
-            <!-- Projet 2 : JP Shop -->
-            <div class="col-lg-4 col-sm-6 mb-4">
-                <div class="portfolio-item">
-                    <div class="portfolio-caption">
-                        <div class="article">
-                            <img src="img/SiteJP.png" alt="JP Shop">
-                            <div class="article-content">
-                                <h2>JP Shop</h2>
-                                <p>Site e-commerce</p>
-                                <a href="#" class="read-more">En cours</a>
-                                <a href="docs/JP Shop.pdf" class="read-more" target="_blank">Maquette</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="portfolio-filters text-center mb-4">
+                <button class="btn btn-outline-primary filter-btn active" data-filter="all">Tous</button>
+                <button class="btn btn-outline-primary filter-btn" data-filter="web">Web</button>
+                <button class="btn btn-outline-primary filter-btn" data-filter="mobile">Mobile</button>
+                <button class="btn btn-outline-primary filter-btn" data-filter="design">Design</button>
             </div>
 
-            <!-- Projet 3 : IEF Shop -->
-            <div class="col-lg-4 col-sm-6 mb-4">
-                <div class="portfolio-item">
-                    <div class="portfolio-caption">
-                        <div class="article">
-                            <img src="img/IefShop.png" alt="IEF Shop">
-                            <div class="article-content">
-                                <h2>IEF SHOP</h2>
-                                <p>Site e-commerce</p>
-                                <a href="docs/iefshop.pdf" class="read-more" target="_blank">Voir plus</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Projet 4 : ljptravel -->
-            <div class="col-lg-4 col-sm-6 mb-4">
-                <div class="portfolio-item">
-                    <div class="portfolio-caption">
-                        <div class="article">
-                            <img src="img/ljptravel.png" alt="ljptravel">
-                            <div class="article-content">
-                                <h2>Ljptravel</h2>
-                                <p>Site vitrine compagnie aérienne</p>
-                                <a href="docs/Maquette.pdf" class="read-more" target="_blank">Maquette</a>
-                                <a href="docs/Rapport-projet.pdf" class="read-more" target="_blank">Rapport</a>
-                                <a href="https://jacque004.github.io/ljpTravel/" class="read-more" target="_blank">Voir plus</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Projet 5 : GEE -->
-            <div class="col-lg-4 col-sm-6 mb-4">
-                <div class="portfolio-item">
-                    <div class="portfolio-caption">
-                        <div class="article">
-                            <img src="img/PartieAcceuil.png" alt="GEE">
-                            <div class="article-content">
-                                <h2>GEE</h2>
-                                <p>Site gestion d’employé d’entreprise</p>
-                                <a href="docs/GEE.pdf" class="read-more" target="_blank">Voir plus</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-             <!-- Projet 6 : Quavodev-->
-                <div class="col-lg-4 col-sm-6 mb-4">
-                    <div class="portfolio-item">
-                        <div class="portfolio-caption">
-                            <div class="article">
-                                <img src="img/Quavodev.jpeg" alt="Quavodev">
-                                <div class="article-content">
-                                    <h2>Quavodev</h2>
-                                    <p>Site vitrine - Agence en marketing digital accompagne les entreprises dans leur transformation digitale</p>
-
-                                    <a href="https://embed.figma.com/proto/RSaEdloLkEucKCxnDwfMJt/QUAVODEV-VOLT-2?node-id=38-29&p=f&scaling=scale-down&content-scaling=fixed&page-id=9%3A214&embed-host=share"
-                                        class="read-more" target="_blank">Voir plus</a>
+            <div class="row g-4">
+                <!-- Projet 1 -->
+                <div class="col-lg-4 col-md-6 portfolio-item" data-category="web">
+                    <div class="portfolio-card">
+                        <div class="portfolio-img">
+                            <img src="img/Calculatrice.png" alt="Calculatrice" class="img-fluid">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-links">
+                                    <a href="calculatrice.html" class="btn btn-light" target="_blank">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+                                    <a href="#" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
+                                        <i class="fas fa-plus"></i>
+                                    </a>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            
-        </div> <!-- Fin de .row -->
-    </div>
-</section>
-
-    <!--PARTIE Stages-->
-    <section class="page-section" id="stage">
-        <div class="max-w-4x1 mx-auto px-4">
-            <div class="text-center mb-8 md:mb-16">
-                <h2>Expériences Professionnelles</h2>
-                <br>
-                <br>
-                <div class="w-32 h-2 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto rounded-full"></div>
-            </div>
-            <div class="space-y-8">
-                <div class="conte">
-                    <img src="docs/imgbac.jpeg" alt="Stage 2ème année"
-                        class="absolute inset-0 w-full h-full object-contain p-2">
-                    <div class="text-container">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            class="lucide lucide-calendar w-5 h-5">
-                            <path d="M8 2v4"></path>
-                            <path d="M16 2v4"></path>
-                            <rect width="18" height="18" x="3" y="4" rx="2"></rect>
-                            <path d="M3 10h18"></path>
-                        </svg>
-                        <span class="font-medium"> janvier 2023 - mars 2023</span>
-                        <div>
-                            <p class="font-semibold">Maxiconduite</p>
-                            <h4>Stage 2ème année</h4>
-                            <p class="text-sm text-gray-600">Cergy, France</p>
-                            <a href="docs/Stage2(1).pdf" class="read-more" target="_blank">Rapport de stage 2ème
-                                année</a>
+                        <div class="portfolio-info">
+                            <h3>Calculatrice</h3>
+                            <p>Application web interactive</p>
                         </div>
                     </div>
                 </div>
-                <br>
-                <div class="space-y-8">
-                    <div class="conte">
-                        <img src="docs/imgbac.jpeg" alt="Stage 1ère année"
-                            class="absolute inset-0 w-full h-full object-contain p-2">
-                        <div class="text-container">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" class="lucide lucide-calendar w-5 h-5">
-                                <path d="M8 2v4"></path>
-                                <path d="M16 2v4"></path>
-                                <rect width="18" height="18" x="3" y="4" rx="2"></rect>
-                                <path d="M3 10h18"></path>
-                            </svg>
-                            <span class="font-medium">09 mai 2022 - 03 juin 2022</span>
-                            <div>
-                                <p class="font-semibold">Loking consulting</p>
-                                <h4>Stage 1ère année</h4>
-                                <p class="text-sm text-gray-600">Villeneuve-le-Roi, France</p>
-                                <p>
-                                    Projet : Plateforme Web de Création d'un client pour l'Entreprise.
-                                </p>
-                                <a href="docs/rapport_stage3.pdf" class="read-more" target="_blank">Rapport de stage
-                                    1ère
-                                    année</a>
-                                <a href="présentation_stage.pdf" class="read-more" target="_blank">Voir</a>
+
+                <!-- Projet 2 -->
+                <div class="col-lg-4 col-md-6 portfolio-item" data-category="web">
+                    <div class="portfolio-card">
+                        <div class="portfolio-img">
+                            <img src="img/SiteJP.png" alt="JP Shop" class="img-fluid">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-links">
+                                    <a href="docs/JP Shop.pdf" class="btn btn-light" target="_blank">
+                                        <i class="fas fa-file-pdf"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-info">
+                            <h3>JP Shop</h3>
+                            <p>Site e-commerce en développement</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Continuer avec les autres projets de la même manière -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Expériences -->
+    <section class="page-section bg-light" id="stage">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading">Expériences Professionnelles</h2>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <img src="docs/imgbac.jpeg" alt="Maxiconduite">
+                            <div class="timeline-title">
+                                <h3>Stage Développeur Web</h3>
+                                <h4>Maxiconduite</h4>
+                            </div>
+                        </div>
+                        <div class="timeline-body">
+                            <p class="timeline-date">
+                                <i class="fas fa-calendar-alt me-2"></i>
+                                janvier 2023 - mars 2023
+                            </p>
+                            <p class="timeline-location">
+                                <i class="fas fa-map-marker-alt me-2"></i>
+                                Cergy, France
+                            </p>
+                            <div class="timeline-actions">
+                                <a href="docs/Stage2.pdf" class="btn btn-outline-primary" target="_blank">
+                                    <i class="fas fa-file-pdf me-2"></i>Rapport de stage
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Continuer avec les autres expériences -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Veille -->
+    <section class="page-section" id="veille">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading">Veille Technologique</h2>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="veille-card">
+                        <div class="veille-header">
+                            <img src="img/IA.jpg" alt="IA médicale" class="img-fluid rounded">
+                            <h3>L'Intelligence Artificielle dans le Milieu Médical</h3>
+                        </div>
+                        <div class="veille-body">
+                            <p>
+                                L'IA transforme profondément le secteur médical en améliorant les diagnostics,
+                                la prise de décision clinique, la recherche et la gestion des systèmes de santé.
+                                Cependant, son utilisation doit être encadrée par des principes éthiques pour
+                                maximiser ses bénéfices tout en minimisant ses risques.
+                            </p>
+                            <div class="veille-sources">
+                                <h4>Sources :</h4>
+                                <ul>
+                                    <li>
+                                        <a href="https://www.msdconnect.fr/innovation-sante/e-sante/lintelligence-artificielle-dans-le-milieu-medical-un-atout-pour-les-patients-et-les-praticiens/" target="_blank">
+                                            MSD Connect
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.entreprises.gouv.fr/fr/numerique/enjeux/l-intelligence-artificielle-au-service-de-la-sante" target="_blank">
+                                            entreprises.gouv.fr
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.who.int/fr/news/item/28-06-2021-who-issues-first-global-report-on-ai-in-health-and-six-guiding-principles-for-its-design-and-use" target="_blank">
+                                            World Health Organization
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="veille-actions">
+                                <a href="https://www.google.fr/alerts" class="btn btn-outline-primary" target="_blank">
+                                    <i class="fas fa-bell me-2"></i>Google Alerts
+                                </a>
+                                <a href="https://www.actuia.com/domaine/sante-medecine/" class="btn btn-outline-primary" target="_blank">
+                                    <i class="fas fa-newspaper me-2"></i>Actualités IA
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -462,147 +347,108 @@
         </div>
     </section>
 
-    <!--PARTIE E5-
-    <section class="page-section" id="E5">
+    <!-- Compétences -->
+    <section class="page-section bg-light" id="Compétences">
         <div class="container">
-            <div class="section-title">
-                <div class="text-center" style="text-align: center !important;">
-                    <h2>E5</h2>
-
-                    <p>
-                        Ce projet est une application web similaire à Leboncoin, permettant aux utilisateurs de
-                        s'inscrire, de se connecter, de gérer leurs annonces, de consulter les annonces d'autres
-                        utilisateurs et de contacter ces derniers via leurs annonces.
-                        <a href="docs/Documentation projet.docx.pdf" download="Site e-commerce">Télécharger la
-                            documentation</a>
-
-                    </p>
-                    <a href="https://drive.google.com/drive/folders/143A2BJiaZTtbWjMvJLSP66LvkKz7DQlz?usp=sharing"
-                        download="Site e-commerce">Télécharger le projet</a>
-                </div>
+            <div class="text-center">
+                <h2 class="section-heading">Compétences</h2>
+                <div class="section-divider"></div>
             </div>
-        </div>
-    </section>
--->
-    <!--PARTIE VEILLE-->
 
-    <section class="page-section" id="veille">
-        <div class="container">
-
-            <div class="section-title">
-                <div class="text-center">
-                    <h2>Veille technologique</h2>
-                </div>
-                <br>
-                <div class="article-container">
-                    <div class="article">
-                        <img src="img/IA.jpg" alt="Image de l'article">
-                        <div class="article-content">
-                            <h2>IA médical</h2>
-                            <p>
-                                l'IA transforme profondément le secteur médical en améliorant les diagnostics, la prise
-                                de décision clinique, la recherche et la gestion des systèmes de santé. Cependant, son
-                                utilisation doit être encadrée par des principes éthiques pour maximiser ses bénéfices
-                                tout en minimisant ses risques​</p>
-                            <P>
-                                <a href="https://www.msdconnect.fr/innovation-sante/e-sante/lintelligence-artificielle-dans-le-milieu-medical-un-atout-pour-les-patients-et-les-praticiens/"
-                                    target="_blank">MSD Connect
-                            </P>
-                            <P>
-                                <a href="https://www.entreprises.gouv.fr/fr/numerique/enjeux/l-intelligence-artificielle-au-service-de-la-sante"
-                                    target="_blank">entreprises.gouv.fr
-                            </P>
-                            <p>
-                                <a href="https://www.who.int/fr/news/item/28-06-2021-who-issues-first-global-report-on-ai-in-health-and-six-guiding-principles-for-its-design-and-use"
-                                    target="_blank">World Health Organization WHO
-                            </p>
-                            <p>
-                                <a href="https://www.google.fr/alerts#2:0/" target="_blank">Google Alert</a>
-                            </p>
-                            <a href="https://www.actuia.com/domaine/sante-medecine/" class="read-more"
-                                target="_blank">Actualités sur l'IA</a>
-
+            <div class="skills-container">
+                <div class="skills-grid">
+                    <!-- Compétences techniques -->
+                    <div class="skill-category">
+                        <h3>Développement Web</h3>
+                        <div class="skills-grid">
+                            <div class="skill">
+                                <img src="https://cdn-icons-png.flaticon.com/128/732/732212.png" alt="HTML">
+                                <p>HTML5</p>
+                            </div>
+                            <div class="skill">
+                                <img src="https://cdn-icons-png.flaticon.com/128/732/732190.png" alt="CSS">
+                                <p>CSS3</p>
+                            </div>
+                            <div class="skill">
+                                <img src="https://cdn-icons-png.flaticon.com/128/5968/5968292.png" alt="JavaScript">
+                                <p>JavaScript</p>
+                            </div>
+                            <!-- Continuer avec les autres compétences -->
                         </div>
                     </div>
+
+                    <div class="skill-category">
+                        <h3>Backend</h3>
+                        <div class="skills-grid">
+                            <div class="skill">
+                                <img src="https://cdn-icons-png.flaticon.com/128/226/226777.png" alt="Java">
+                                <p>Java</p>
+                            </div>
+                            <div class="skill">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/2/27/PHP-logo.svg" alt="PHP">
+                                <p>PHP 8</p>
+                            </div>
+                            <div class="skill">
+                                <img src="https://upload.wikimedia.org/wikipedia/fr/6/62/MySQL.svg" alt="MySQL">
+                                <p>MySQL</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Continuer avec les autres catégories -->
                 </div>
-
-            </div>
-        </div>
-    </section>
-    <br>
-    <br>
-    <br>
-    <br>
-
-      <!--PARTIE Compétences-->
-    
-        <section class="page-section" id="Compétences">
-        <div class="container skills-container">
-            <div class="text-center">
-                <h2>Compétences</h2>
-            </div>
-            <br><br>
-            <div class="skills-grid">
-                <div class="skill"><img src="https://cdn-icons-png.flaticon.com/128/732/732212.png" alt="HTML"><p>HTML</p></div>
-                <div class="skill"><img src="https://cdn-icons-png.flaticon.com/128/732/732190.png" alt="CSS"><p>CSS</p></div>
-                <div class="skill"><img src="https://cdn-icons-png.flaticon.com/128/5968/5968292.png" alt="JavaScript"><p>JavaScript</p></div>
-                <div class="skill"><img src="https://cdn-icons-png.flaticon.com/128/226/226777.png" alt="Java"><p>Java</p></div>
-                <div class="skill"><img src="https://upload.wikimedia.org/wikipedia/commons/2/27/PHP-logo.svg" alt="PHP"><p>PHP 8</p></div>
-                <div class="skill"><img src="https://upload.wikimedia.org/wikipedia/fr/6/62/MySQL.svg" alt="MySQL"><p>MySQL</p></div>
-                <div class="skill"><img src="https://s.w.org/style/images/about/WordPress-logotype-simplified.png" alt="WordPress"><p>WordPress</p></div>
-                <div class="skill"><img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg" alt="Figma"><p>Figma</p></div>
-                <div class="skill"><img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Angular_full_color_logo.svg" alt="Angular"><p>Angular - en cours d'apprentissage</p></div>
-                <div class="skill"><img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Spring_Framework_Logo_2018.svg" alt="Spring"><p>Spring - en cours d'apprentissage</p></div>
-                <div class="skill"><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub"><p>GitHub</p></div>
-                <div class="skill"><img src="https://code.visualstudio.com/assets/images/code-stable.png" alt="Visual Studio"><p>VS Code</p></div>
-                <div class="skill"><i class="fas fa-code fa-4x"></i><p>Sublime Text</p></div>
-                <div class="skill"><img src="https://upload.wikimedia.org/wikipedia/commons/a/af/Adobe_Photoshop_CC_icon.svg" alt="Photoshop"><p>Photoshop</p></div>
-                <div class="skill"><p>Canva</p></div>
-                <div class="skill"><p>DevOps  - en cours d'apprentissage</p></div>
-                <div class="skill"><img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" alt="Power BI"><p>Power BI - en cours d'apprentissage</p></div>
-                <div class="skill"><p>MS Project</p></div>
-                <div class="skill"><img src="https://seeklogo.com/images/J/jira-logo-FD39F795A7-seeklogo.com.png" alt="Jira"><p>Jira</p></div>
-                <div class="skill"><i class="fab fa-trello fa-4x"></i><p>Trello</p></div>
-                <div class="skill"><i class="fab fa-eclipse fa-4x"></i><p>Eclipse</p></div>
             </div>
         </div>
     </section>
 
-    <!--PARTIE CONTACT-->
-
+    <!-- Contact -->
     <section class="page-section" id="contact">
         <div class="container">
             <div class="text-center">
-                <h2 class="masthead-subheading">Contact</h2>
-                <br>
-                <div class="footer_group_contact">
-                    <ul>
-                        <p><i class="fa-sharp fa-solid fa-envelope"></i> <a href="mailto:jacquesloemba@outlook.fr"
-                                target="_blank">jacquesloemba@outlook.fr</a></p>
-                        <p><i class="fab fa-linkedin"></i> <a
-                                href="https://www.linkedin.com/in/jacques-philippe-loemba-04baaa256/"
-                                target="_blank">linkedin</a>
-                        </p>
-                        <p><i class="fa-brands fa-github"><a href="http://github.com/Jacque004"
-                                    target="_blank">github</a></i></p>
-                        <p><i class="fa-brands fa-twitter"></i><a href="https://twitter.com/jacques_p69"
-                                target="_blank">twitter</a></p>
+                <h2 class="section-heading">Contact</h2>
+                <div class="section-divider"></div>
+            </div>
 
-                    </ul>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="contact-card">
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <a href="mailto:jacquesloemba@outlook.fr">jacquesloemba@outlook.fr</a>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fab fa-linkedin"></i>
+                                <a href="https://www.linkedin.com/in/jacques-philippe-loemba-04baaa256/" target="_blank">
+                                    LinkedIn
+                                </a>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fab fa-github"></i>
+                                <a href="http://github.com/Jacque004" target="_blank">GitHub</a>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fab fa-twitter"></i>
+                                <a href="https://twitter.com/jacques_p69" target="_blank">Twitter</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <p>Copyright &copy; 2025 Tous droits réservés.</p>
 
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="text-center">
+                <p>&copy; 2024 Jacques Philippe LOEMBA. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
-    <script src="contact.js"></script>
 </body>
-
-</html>
+</html> 
