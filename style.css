@@ -255,10 +255,9 @@ body {
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
     padding: 1rem;
-    justify-items: center;
 }
 
 .skill {
@@ -273,8 +272,6 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 120px;
-    max-width: 120px;
-    margin: 0 auto;
 }
 
 .skill:hover {
@@ -282,71 +279,105 @@ body {
 }
 
 .skill img {
-    width: 32px;
-    height: 32px;
-    margin-bottom: 0.5rem;
+    width: 40px;
+    height: 40px;
+    margin-bottom: 0.75rem;
     object-fit: contain;
 }
 
 .skill i {
     font-size: 2rem;
-    color: var(--secondary-color);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
 }
 
-.skill p {
-    margin: 0;
-    font-size: 0.8rem;
-    color: var(--text-color);
-    line-height: 1.2;
-    word-wrap: break-word;
-    max-width: 100%;
+/* Couleurs spécifiques pour les icônes Font Awesome */
+.skill i.fa-code {
+    color: #FF9800; /* Orange pour Sublime Text */
+}
+
+.skill i.fa-trello {
+    color: #0079BF; /* Bleu Trello */
+}
+
+.skill i.fa-eclipse {
+    color: #2C2255; /* Violet Eclipse */
+}
+
+.skill i.fa-canva {
+    color: #00C4CC; /* Turquoise Canva */
+}
+
+.skill i.fa-infinity {
+    color: #6C63FF; /* Violet pour DevOps */
+}
+
+.skill i.fa-project-diagram {
+    color: #217346; /* Vert MS Project */
 }
 
 /* Ajustements spécifiques pour certaines icônes */
+.skill img[alt="HTML"] {
+    content: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg');
+}
+
+.skill img[alt="CSS"] {
+    content: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg');
+}
+
+.skill img[alt="JavaScript"] {
+    content: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg');
+}
+
+.skill img[alt="Java"] {
+    content: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg');
+}
+
+.skill img[alt="PHP"] {
+    content: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg');
+}
+
+.skill img[alt="MySQL"] {
+    content: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg');
+}
+
 .skill img[alt="WordPress"] {
-    width: 32px;
-    height: 32px;
+    content: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg');
 }
 
 .skill img[alt="Figma"] {
-    width: 28px;
-    height: 28px;
+    content: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg');
 }
 
 .skill img[alt="Angular"] {
-    width: 32px;
-    height: 32px;
+    content: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg');
 }
 
 .skill img[alt="Spring"] {
-    width: 32px;
-    height: 32px;
+    content: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg');
 }
 
 .skill img[alt="GitHub"] {
-    width: 28px;
-    height: 28px;
+    content: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg');
 }
 
 .skill img[alt="VS Code"] {
-    width: 28px;
-    height: 28px;
+    content: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg');
 }
 
-.skill img[alt="Power BI"] {
-    width: 32px;
-    height: 32px;
+.skill img[alt="Photoshop"] {
+    content: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg');
 }
 
 .skill img[alt="Jira"] {
-    width: 28px;
-    height: 28px;
+    content: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg');
 }
 
 .skill img[alt="Pack Office"] {
-    width: 32px;
-    height: 32px;
+    content: url('https://upload.wikimedia.org/wikipedia/commons/9/9c/Microsoft_Office_logo_%282019%E2%80%93present%29.svg');
+}
+
+.skill img[alt="Power BI"] {
+    content: url('https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg');
 }
 
 /* Contact */
@@ -456,22 +487,28 @@ body {
     }
 
     .skills-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 0.8rem;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
     }
 
     .skill {
         min-height: 100px;
-        padding: 0.8rem;
+        padding: 0.75rem;
     }
 
     .skill img {
-        width: 28px;
-        height: 28px;
+        width: 32px;
+        height: 32px;
+        margin-bottom: 0.5rem;
     }
 
     .skill i {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .skill p {
+        font-size: 0.8rem;
     }
 }
 
