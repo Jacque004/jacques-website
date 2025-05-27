@@ -255,47 +255,37 @@ body {
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
-    gap: 1.2rem;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 1rem;
     padding: 1rem;
     justify-items: center;
 }
 
 .skill {
     text-align: center;
-    padding: 0.8rem;
+    padding: 1rem;
     background: var(--light-text);
-    border-radius: 12px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
-    transition: all var(--transition-speed);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: transform var(--transition-speed);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 95px;
-    max-width: 95px;
+    min-height: 120px;
+    max-width: 120px;
     margin: 0 auto;
-    border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .skill:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
-    border-color: var(--secondary-color);
+    transform: translateY(-5px);
 }
 
 .skill img {
     width: 32px;
     height: 32px;
-    margin-bottom: 0.6rem;
+    margin-bottom: 0.5rem;
     object-fit: contain;
-    filter: brightness(0.95);
-    transition: all var(--transition-speed);
-}
-
-.skill:hover img {
-    filter: brightness(1);
-    transform: scale(1.05);
 }
 
 .skill i {
@@ -306,55 +296,57 @@ body {
 
 .skill p {
     margin: 0;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     color: var(--text-color);
     line-height: 1.2;
     word-wrap: break-word;
     max-width: 100%;
-    font-weight: 500;
 }
 
 /* Ajustements spécifiques pour certaines icônes */
-.skill img[alt="Sublime Text"] {
-    width: 30px;
-    height: 30px;
-    padding: 1px;
-}
-
-.skill img[alt="Eclipse"] {
+.skill img[alt="WordPress"] {
     width: 32px;
     height: 32px;
-    padding: 1px;
+}
+
+.skill img[alt="Figma"] {
+    width: 28px;
+    height: 28px;
+}
+
+.skill img[alt="Angular"] {
+    width: 32px;
+    height: 32px;
+}
+
+.skill img[alt="Spring"] {
+    width: 32px;
+    height: 32px;
+}
+
+.skill img[alt="GitHub"] {
+    width: 28px;
+    height: 28px;
+}
+
+.skill img[alt="VS Code"] {
+    width: 28px;
+    height: 28px;
+}
+
+.skill img[alt="Power BI"] {
+    width: 32px;
+    height: 32px;
 }
 
 .skill img[alt="Jira"] {
-    width: 30px;
-    height: 30px;
-    padding: 1px;
-}
-
-.skill img[alt="Trello"] {
-    width: 32px;
-    height: 32px;
-    padding: 1px;
-}
-
-.skill img[alt="MS Project"] {
-    width: 30px;
-    height: 30px;
-    padding: 1px;
+    width: 28px;
+    height: 28px;
 }
 
 .skill img[alt="Pack Office"] {
     width: 32px;
     height: 32px;
-    padding: 1px;
-}
-
-.skill img[alt="Canva"] {
-    width: 30px;
-    height: 30px;
-    padding: 1px;
 }
 
 /* Contact */
@@ -464,24 +456,22 @@ body {
     }
 
     .skills-grid {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         gap: 0.8rem;
     }
 
     .skill {
-        min-height: 85px;
-        max-width: 85px;
-        padding: 0.6rem;
+        min-height: 100px;
+        padding: 0.8rem;
     }
 
     .skill img {
         width: 28px;
         height: 28px;
-        margin-bottom: 0.5rem;
     }
 
-    .skill p {
-        font-size: 0.65rem;
+    .skill i {
+        font-size: 1.8rem;
     }
 }
 
@@ -495,24 +485,7 @@ body {
     }
     
     .skills-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 0.6rem;
-    }
-
-    .skill {
-        min-height: 80px;
-        max-width: 80px;
-        padding: 0.5rem;
-    }
-
-    .skill img {
-        width: 26px;
-        height: 26px;
-        margin-bottom: 0.4rem;
-    }
-
-    .skill p {
-        font-size: 0.6rem;
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
