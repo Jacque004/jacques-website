@@ -10,11 +10,6 @@
     --transition-speed: 0.3s;
     --border-radius: 8px;
     --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    
-    /* Polices */
-    --font-primary: 'Inter', sans-serif;
-    --font-heading: 'Space Grotesk', sans-serif;
-    --font-secondary: 'Poppins', sans-serif;
 }
 
 /* Reset et styles de base */
@@ -29,11 +24,10 @@ html {
 }
 
 body {
-    font-family: var(--font-primary);
+    font-family: 'Montserrat', sans-serif;
     line-height: 1.6;
     color: var(--text-color);
     overflow-x: hidden;
-    font-weight: 400;
 }
 
 /* Navigation */
@@ -45,20 +39,16 @@ body {
 }
 
 .navbar-brand {
-    font-family: var(--font-heading);
     font-weight: 700;
     font-size: 1.5rem;
-    letter-spacing: -0.5px;
     color: var(--light-text) !important;
 }
 
 .nav-link {
-    font-family: var(--font-primary);
     color: var(--light-text) !important;
     font-weight: 500;
     padding: 0.5rem 1rem !important;
     transition: color var(--transition-speed);
-    letter-spacing: 0.2px;
 }
 
 .nav-link:hover {
@@ -83,19 +73,13 @@ body {
 }
 
 .masthead-heading {
-    font-family: var(--font-heading);
-    font-weight: 700;
-    letter-spacing: -1px;
-    line-height: 1.2;
     font-size: 3.5rem;
+    font-weight: 700;
     margin-bottom: 1rem;
     animation: fadeInDown 1s ease-out;
 }
 
 .masthead-subheading {
-    font-family: var(--font-secondary);
-    font-weight: 500;
-    letter-spacing: 0.5px;
     font-size: 2rem;
     margin-bottom: 2rem;
     animation: fadeInUp 1s ease-out;
@@ -111,11 +95,8 @@ body {
 }
 
 .section-heading {
-    font-family: var(--font-heading);
-    font-weight: 700;
-    letter-spacing: -0.5px;
-    line-height: 1.2;
     font-size: 2.5rem;
+    font-weight: 700;
     margin-bottom: 1rem;
     color: var(--primary-color);
 }
@@ -146,13 +127,6 @@ body {
 
 .about-content {
     font-size: 1.1rem;
-}
-
-.about-content p {
-    font-family: var(--font-primary);
-    font-weight: 400;
-    line-height: 1.8;
-    letter-spacing: 0.2px;
 }
 
 .about-buttons {
@@ -197,18 +171,12 @@ body {
 }
 
 .timeline-title h3 {
-    font-family: var(--font-heading);
-    font-weight: 600;
-    letter-spacing: -0.3px;
     font-size: 1.3rem;
     margin-bottom: 0.5rem;
     color: var(--primary-color);
 }
 
 .timeline-title h4 {
-    font-family: var(--font-secondary);
-    font-weight: 500;
-    letter-spacing: 0.2px;
     font-size: 1.1rem;
     color: var(--secondary-color);
 }
@@ -249,9 +217,6 @@ body {
 }
 
 .article-content h2 {
-    font-family: var(--font-heading);
-    font-weight: 600;
-    letter-spacing: -0.3px;
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
 }
@@ -341,14 +306,12 @@ body {
 
 .skill p {
     margin: 0;
-    font-family: var(--font-primary);
-    font-weight: 500;
-    letter-spacing: 0.2px;
     font-size: 0.7rem;
     color: var(--text-color);
     line-height: 1.2;
     word-wrap: break-word;
     max-width: 100%;
+    font-weight: 500;
 }
 
 /* Ajustements spécifiques pour certaines icônes */
@@ -411,9 +374,6 @@ body {
 .contact-item {
     display: flex;
     align-items: center;
-    font-family: var(--font-primary);
-    font-weight: 500;
-    letter-spacing: 0.2px;
     font-size: 1.1rem;
 }
 
@@ -439,12 +399,6 @@ body {
     color: var(--light-text);
     padding: 2rem 0;
     text-align: center;
-}
-
-.footer p {
-    font-family: var(--font-secondary);
-    font-weight: 400;
-    letter-spacing: 0.3px;
 }
 
 /* Animations */
@@ -529,32 +483,15 @@ body {
     .skill p {
         font-size: 0.65rem;
     }
-
-    .masthead-heading {
-        font-size: 2.5rem;
-        letter-spacing: -0.8px;
-    }
-    
-    .masthead-subheading {
-        font-size: 1.5rem;
-        letter-spacing: 0.3px;
-    }
-    
-    .section-heading {
-        font-size: 2rem;
-        letter-spacing: -0.4px;
-    }
 }
 
 @media (max-width: 576px) {
     .masthead-heading {
         font-size: 2rem;
-        letter-spacing: -0.6px;
     }
     
     .masthead-subheading {
         font-size: 1.2rem;
-        letter-spacing: 0.2px;
     }
     
     .skills-grid {
@@ -583,10 +520,8 @@ body {
 .btn {
     padding: 0.8rem 2rem;
     border-radius: 25px;
-    font-family: var(--font-primary);
     font-weight: 500;
     transition: all var(--transition-speed);
-    letter-spacing: 0.3px;
 }
 
 .btn-primary {
@@ -716,9 +651,6 @@ body {
     background-color: transparent;
     border: 2px solid var(--secondary-color);
     color: var(--secondary-color);
-    font-family: var(--font-primary);
-    font-weight: 500;
-    letter-spacing: 0.3px;
 }
 
 .filter-btn:hover {
