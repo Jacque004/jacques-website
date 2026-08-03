@@ -187,6 +187,9 @@ document.addEventListener('DOMContentLoaded', () => {
     /* Notification Discord (une fois par session navigateur) */
     function notifySiteVisit() {
         const KEY = 'jpl_visit_notified';
+        // Après déploiement Cloudflare, collez l’URL du Worker ici :
+        const CLOUDFLARE_WORKER_URL = 'https://notify-visit.jacques-p69.workers.dev';
+
         try {
             if (sessionStorage.getItem(KEY)) return;
             sessionStorage.setItem(KEY, '1');
@@ -205,9 +208,9 @@ document.addEventListener('DOMContentLoaded', () => {
             platform: navigator.platform || navigator.userAgentData?.platform || '',
         };
 
-        // Chemin absolu depuis la racine du site (ex. /jacques-website/api/...)
         const basePath = window.location.pathname.replace(/\/[^/]*$/, '/');
-        const endpoint = `${window.location.origin}${basePath}api/notify-visit.php`;
+        const phpEndpoint = `${window.location.origin}${basePath}api/notify-visit.php`;
+        const endpoint = CLOUDFLARE_WORKER_URL || phpEndpoint;
 
         fetch(endpoint, {
             method: 'POST',

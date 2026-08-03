@@ -1,2 +1,4 @@
 api/config.php
 api/data/
+cloudflare/notify-visit/node_modules/
+cloudflare/notify-visit/.wrangler/
