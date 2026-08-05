@@ -1,28 +1,54 @@
 /**
- * Portfolio — interactions
- * Nav scrollspy, filtres projets, load more, a11y
+ * Portfolio — UX interactions
+ * Nav, scroll progress, filtres, load more, a11y
  */
 document.addEventListener('DOMContentLoaded', () => {
     const NAV_OFFSET = 100;
     const BACK_TOP_THRESHOLD = 420;
     const PROJECTS_PAGE_SIZE = 6;
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     const navbar = document.querySelector('.navbar');
-    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
-    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link, .nav-cta');
+    const sections = document.querySelectorAll('section[id], header[id]');
     const navbarCollapse = document.querySelector('#navbarNav');
     const backToTop = document.getElementById('backToTop');
     const filterButtons = document.querySelectorAll('.project-filters .filter-btn');
     const projectCards = Array.from(document.querySelectorAll('.project-card'));
     const loadMoreBtn = document.getElementById('loadMoreProjects');
     const loadMoreWrap = document.querySelector('.projects-load-more');
+    const filterStatus = document.getElementById('projectsFilterStatus');
+    const projectsEmpty = document.getElementById('projectsEmpty');
 
     let currentFilter = 'all';
     let visibleCount = PROJECTS_PAGE_SIZE;
     let ticking = false;
 
-    function updateNavbar() {
+    function closeMobileNav() {
+        if (!navbarCollapse?.classList.contains('show')) return;
+        const toggler = document.querySelector('.navbar-toggler');
+        if (toggler && window.bootstrap?.Collapse) {
+            bootstrap.Collapse.getOrCreateInstance(navbarCollapse).hide();
+        } else {
+            navbarCollapse.classList.remove('show');
+            toggler?.setAttribute('aria-expanded', 'false');
+        }
+    }
+
+    function scrollToHash(hash, behavior) {
+        if (!hash || hash === '#') return;
+        const target = document.querySelector(hash);
+        if (!target) return;
+        const top = target.getBoundingClientRect().top + window.scrollY - (NAV_OFFSET - 12);
+        window.scrollTo({
+            top: Math.max(0, top),
+            behavior: reduceMotion ? 'auto' : (behavior || 'smooth'),
+        });
+    }
+
+    function updateChrome() {
         const y = window.scrollY || window.pageYOffset;
+
         if (navbar) {
             navbar.classList.toggle('scrolled', y > 40);
         }
@@ -41,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        navLinks.forEach((link) => {
+        document.querySelectorAll('.navbar-nav .nav-link').forEach((link) => {
             const href = link.getAttribute('href');
             const isActive = currentId && href === `#${currentId}`;
             link.classList.toggle('active', Boolean(isActive));
@@ -57,31 +83,48 @@ document.addEventListener('DOMContentLoaded', () => {
         if (ticking) return;
         ticking = true;
         requestAnimationFrame(() => {
-            updateNavbar();
+            updateChrome();
             ticking = false;
         });
     }
 
     window.addEventListener('scroll', onScroll, { passive: true });
-    updateNavbar();
+    window.addEventListener('resize', onScroll, { passive: true });
+    updateChrome();
 
-    navLinks.forEach((link) => {
-        link.addEventListener('click', () => {
-            if (navbarCollapse && navbarCollapse.classList.contains('show')) {
-                const toggler = document.querySelector('.navbar-toggler');
-                if (toggler && window.bootstrap?.Collapse) {
-                    bootstrap.Collapse.getOrCreateInstance(navbarCollapse).hide();
-                } else {
-                    navbarCollapse.classList.remove('show');
-                    toggler?.setAttribute('aria-expanded', 'false');
-                }
-            }
-        });
+    document.addEventListener('click', (event) => {
+        const anchor = event.target.closest('a[href^="#"]');
+        if (!anchor) return;
+
+        // Sous file://, laisser le navigateur gérer les ancres (sinon erreur d’origine)
+        if (window.location.protocol === 'file:') {
+            closeMobileNav();
+            return;
+        }
+
+        const hash = anchor.getAttribute('href');
+        if (!hash || hash === '#' || !document.querySelector(hash)) return;
+        event.preventDefault();
+        closeMobileNav();
+        scrollToHash(hash);
+        try {
+            history.pushState(null, '', hash);
+        } catch (_) {
+            /* ignore */
+        }
+    });
+
+    if (window.location.hash && window.location.protocol !== 'file:') {
+        requestAnimationFrame(() => scrollToHash(window.location.hash, 'auto'));
+    }
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') closeMobileNav();
     });
 
     if (backToTop) {
         backToTop.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
         });
     }
 
@@ -109,17 +152,31 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        const moreAvailable = matched.length > visibleCount;
-        if (loadMoreWrap) {
-            loadMoreWrap.hidden = !moreAvailable;
-        }
+        const remaining = Math.max(0, matched.length - visibleCount);
+        const moreAvailable = remaining > 0;
+
+        if (loadMoreWrap) loadMoreWrap.hidden = !moreAvailable;
         if (loadMoreBtn) {
             loadMoreBtn.hidden = !moreAvailable;
-            loadMoreBtn.setAttribute('aria-expanded', String(moreAvailable && visibleCount > PROJECTS_PAGE_SIZE));
+            loadMoreBtn.textContent = moreAvailable
+                ? `Voir plus (${remaining} restant${remaining > 1 ? 's' : ''})`
+                : 'Voir plus de projets';
+            loadMoreBtn.setAttribute('aria-expanded', String(visibleCount > PROJECTS_PAGE_SIZE));
+        }
+
+        if (filterStatus) {
+            filterStatus.textContent = matched.length
+                ? `${shown} projet${shown > 1 ? 's' : ''} affiché${shown > 1 ? 's' : ''} sur ${matched.length}`
+                : '';
+        }
+
+        if (projectsEmpty) {
+            projectsEmpty.hidden = matched.length > 0;
         }
     }
 
     filterButtons.forEach((btn) => {
+        btn.setAttribute('aria-pressed', btn.classList.contains('active') ? 'true' : 'false');
         btn.addEventListener('click', () => {
             filterButtons.forEach((b) => {
                 b.classList.remove('active');
@@ -133,10 +190,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    filterButtons.forEach((btn) => {
-        btn.setAttribute('aria-pressed', btn.classList.contains('active') ? 'true' : 'false');
-    });
-
     if (loadMoreBtn) {
         loadMoreBtn.addEventListener('click', () => {
             visibleCount += PROJECTS_PAGE_SIZE;
@@ -146,14 +199,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     refreshProjects();
 
-    /* Filtre compétences */
     const skillsFilterButtons = document.querySelectorAll('.skills-filters .filter-btn');
     const skillsGroups = Array.from(document.querySelectorAll('.skills-group'));
-    let currentSkillsFilter = 'outils';
+    let currentSkillsFilter = 'fullstack';
 
     function matchesSkillsFilter(group) {
         if (currentSkillsFilter === 'outils') {
-            return group.dataset.skillsCategory === 'outils';
+            return group.dataset.skillsCategory === 'outils' || group.dataset.skillsTag === 'outils';
         }
         return group.dataset.skillsTag === currentSkillsFilter;
     }
@@ -162,9 +214,7 @@ document.addEventListener('DOMContentLoaded', () => {
         skillsGroups.forEach((group) => {
             const match = matchesSkillsFilter(group);
             group.classList.toggle('is-hidden', !match);
-            if (match) {
-                group.classList.add('visible');
-            }
+            if (match) group.classList.add('visible');
         });
     }
 
@@ -184,10 +234,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     refreshSkills();
 
-    /* Notification Discord (une fois par session navigateur) */
     function notifySiteVisit() {
         const KEY = 'jpl_visit_notified';
-        // Après déploiement Cloudflare, collez l’URL du Worker ici :
         const CLOUDFLARE_WORKER_URL = 'https://notify-visit.jacques-p69.workers.dev';
 
         try {
@@ -217,15 +265,13 @@ document.addEventListener('DOMContentLoaded', () => {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(payload),
             keepalive: true,
-        }).catch(() => {
-            /* silencieux : ne bloque jamais le site */
-        });
+        }).catch(() => {});
     }
 
     notifySiteVisit();
 
     const revealTargets = document.querySelectorAll(
-        '.timeline-item, .project-card, .veille-card, .skills-group, .social-btn'
+        '.timeline-item, .project-card, .featured-item, .veille-card, .skills-group, .social-btn'
     );
 
     if ('IntersectionObserver' in window) {
@@ -243,9 +289,10 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
         );
-
         revealTargets.forEach((el) => revealObserver.observe(el));
     } else {
         revealTargets.forEach((el) => el.classList.add('visible'));
     }
+
+    document.documentElement.classList.add('js-ready');
 });
