@@ -32,14 +32,29 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             navbarCollapse.classList.remove('show');
             toggler?.setAttribute('aria-expanded', 'false');
+            document.body.classList.remove('nav-open');
         }
+    }
+
+    if (navbarCollapse) {
+        navbarCollapse.addEventListener('show.bs.collapse', () => {
+            document.body.classList.add('nav-open');
+        });
+        navbarCollapse.addEventListener('hide.bs.collapse', () => {
+            document.body.classList.remove('nav-open');
+        });
+    }
+
+    function getNavOffset() {
+        return window.matchMedia('(max-width: 991.98px)').matches ? 84 : 100;
     }
 
     function scrollToHash(hash, behavior) {
         if (!hash || hash === '#') return;
         const target = document.querySelector(hash);
         if (!target) return;
-        const top = target.getBoundingClientRect().top + window.scrollY - (NAV_OFFSET - 12);
+        const offset = getNavOffset();
+        const top = target.getBoundingClientRect().top + window.scrollY - (offset - 12);
         window.scrollTo({
             top: Math.max(0, top),
             behavior: reduceMotion ? 'auto' : (behavior || 'smooth'),
@@ -60,9 +75,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         let currentId = null;
+        const offset = getNavOffset();
         sections.forEach((section) => {
             const rect = section.getBoundingClientRect();
-            if (rect.top <= NAV_OFFSET && rect.bottom >= NAV_OFFSET) {
+            if (rect.top <= offset && rect.bottom >= offset) {
                 currentId = section.id;
             }
         });

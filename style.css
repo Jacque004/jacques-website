@@ -881,6 +881,11 @@ html.js-ready body {
     padding: 1.25rem;
 }
 
+.project-card-media--matos {
+    background: #f4f7f8;
+    padding: 1rem 1.25rem;
+}
+
 .project-card-media--logo img {
     object-fit: contain;
     width: 100%;
@@ -1329,3 +1334,305 @@ html.js-ready body {
 .about-content {
     max-width: none;
 }
+
+/* ========================================
+   Responsive & mobile UX
+   ======================================== */
+
+/* Conteneurs & safe areas */
+.container {
+    padding-left: max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
+}
+
+@supports (padding: max(0px)) {
+    body {
+        padding-left: env(safe-area-inset-left);
+        padding-right: env(safe-area-inset-right);
+    }
+}
+
+/* Menu mobile ouvert : pas de scroll derrière */
+body.nav-open {
+    overflow: hidden;
+    touch-action: none;
+}
+
+/* Désactiver les hover “lift” sur écrans tactiles */
+@media (hover: none) {
+    .project-card:hover,
+    .timeline-content:hover,
+    .skill-badge:hover,
+    .social-btn:hover,
+    .btn-primary:hover,
+    .nav-cta:hover {
+        transform: none;
+    }
+
+    .project-card:hover .project-card-media img,
+    .featured-item:hover .featured-media img {
+        transform: none;
+    }
+}
+
+/* ——— Tablette ——— */
+@media (max-width: 991.98px) {
+    :root {
+        --nav-h: 64px;
+        --section-pad: clamp(3.25rem, 8vw, 5rem);
+    }
+
+    .navbar-nav .nav-link {
+        padding: 0.85rem 0.75rem !important;
+        font-size: 1rem;
+        min-height: 48px;
+        display: flex;
+        align-items: center;
+    }
+
+    .navbar-collapse {
+        max-height: calc(100dvh - var(--nav-h) - 1rem);
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .navbar.scrolled {
+        background: rgba(10, 14, 23, 0.96);
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem;
+    }
+}
+
+/* ——— Mobile ——— */
+@media (max-width: 767.98px) {
+    :root {
+        --section-pad: clamp(2.75rem, 10vw, 4rem);
+    }
+
+    .masthead {
+        min-height: 100svh;
+        padding: calc(var(--nav-h) + 1.5rem) 0 3rem;
+    }
+
+    .masthead-kicker {
+        flex-wrap: wrap;
+        row-gap: 0.35rem;
+        font-size: 0.68rem;
+        letter-spacing: 0.08em;
+        max-width: 100%;
+        line-height: 1.45;
+        padding-inline: 0.25rem;
+    }
+
+    .masthead-kicker::before,
+    .masthead-kicker::after {
+        width: 12px;
+    }
+
+    .masthead-heading {
+        font-size: clamp(1.75rem, 8.5vw, 2.35rem);
+        padding-inline: 0.15rem;
+    }
+
+    .masthead-subheading {
+        font-size: 1.05rem;
+    }
+
+    .masthead-pitch {
+        font-size: 0.95rem;
+        max-width: 36ch;
+        margin-bottom: 1.5rem;
+        padding-inline: 0.25rem;
+    }
+
+    .masthead-buttons {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.65rem;
+        padding-inline: 0.25rem;
+    }
+
+    .masthead-buttons .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .masthead-buttons .btn-lg {
+        padding: 0.95rem 1.25rem;
+        font-size: 0.92rem;
+    }
+
+    .section-index {
+        font-size: 0.72rem;
+        letter-spacing: 0.12em;
+    }
+
+    .section-heading {
+        font-size: clamp(1.55rem, 7vw, 2rem);
+    }
+
+    .section-description,
+    .about-lead {
+        font-size: 1rem;
+    }
+
+    .about-chip {
+        font-size: 0.78rem;
+    }
+
+    /* Filtres scrollables horizontalement */
+    .project-filters,
+    .skills-filters {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        gap: 0.4rem;
+        margin-inline: -0.25rem;
+        padding: 0.15rem 0.25rem 0.65rem;
+        mask-image: linear-gradient(90deg, transparent, #000 8px, #000 calc(100% - 16px), transparent);
+    }
+
+    .project-filters::-webkit-scrollbar,
+    .skills-filters::-webkit-scrollbar {
+        display: none;
+    }
+
+    .filter-btn {
+        flex: 0 0 auto;
+        white-space: nowrap;
+        min-height: 44px;
+        padding: 0.55rem 1rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .project-card-body {
+        padding: 1rem 1.05rem 1.15rem;
+    }
+
+    .project-link {
+        min-height: 44px;
+        padding: 0.5rem 0.85rem;
+    }
+
+    .featured-item {
+        gap: 1.25rem;
+    }
+
+    .featured-media {
+        aspect-ratio: 16 / 11;
+    }
+
+    .timeline-content {
+        padding: 1.1rem 1.15rem;
+    }
+
+    .timeline-content:hover {
+        transform: none;
+    }
+
+    .timeline-actions .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .contact-panel {
+        grid-template-columns: 1fr;
+        padding: 1.75rem 1.25rem;
+        gap: 1.5rem;
+    }
+
+    .contact-panel .section-head {
+        margin-bottom: 0;
+    }
+
+    .social-btn {
+        min-height: 52px;
+        padding: 0.9rem 1rem;
+        font-size: 0.92rem;
+        word-break: break-word;
+    }
+
+    .social-btn span {
+        overflow-wrap: anywhere;
+    }
+
+    .veille-visual {
+        max-height: 180px;
+        aspect-ratio: 16 / 9;
+    }
+
+    .back-to-top {
+        right: max(0.85rem, env(safe-area-inset-right));
+        bottom: max(0.85rem, env(safe-area-inset-bottom));
+        width: 46px;
+        height: 46px;
+    }
+
+    .skills-groups {
+        gap: 1.25rem;
+    }
+
+    .skill-badge {
+        min-height: 40px;
+    }
+}
+
+/* Très petits écrans */
+@media (max-width: 380px) {
+    .masthead-heading {
+        font-size: 1.6rem;
+    }
+
+    .masthead-kicker {
+        font-size: 0.62rem;
+        letter-spacing: 0.05em;
+    }
+
+    .container {
+        padding-left: 0.85rem;
+        padding-right: 0.85rem;
+    }
+}
+
+/* Mobile paysage / hauteur réduite */
+@media (max-height: 520px) and (orientation: landscape) {
+    .masthead {
+        min-height: auto;
+        padding: calc(var(--nav-h) + 1rem) 0 2rem;
+    }
+
+    .masthead-pitch {
+        margin-bottom: 1rem;
+    }
+
+    .masthead-buttons {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .masthead-buttons .btn {
+        width: auto;
+    }
+}
+
+/* Grands écrans : contenu lisible, pas trop étiré */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1200px;
+    }
+
+    .masthead-content {
+        max-width: 780px;
+    }
+}
+
