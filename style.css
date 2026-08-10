@@ -886,6 +886,17 @@ html.js-ready body {
     padding: 1rem 1.25rem;
 }
 
+.project-card-media--rastre {
+    background: linear-gradient(160deg, #faf8f6 0%, #f0ebe6 100%);
+    padding: 1.25rem 1.5rem;
+}
+
+.project-card-media--rastre img {
+    max-height: 5.5rem;
+    width: auto;
+    max-width: 100%;
+}
+
 .project-card-media--logo img {
     object-fit: contain;
     width: 100%;
